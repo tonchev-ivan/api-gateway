@@ -3,6 +3,7 @@ require 'httparty'
 require 'json'
 require 'active_support/all'
 
+# jwt could be used to make the request to banking
 module Proxy
   class << self
     def proxy_request(request)
@@ -35,5 +36,4 @@ module Proxy
       .flatten].except('Host', 'Connection', 'Version', 'X-Forwarded-For', 'X-Forwarded-Port', 'X-Forwarded-Proto')
     end
   end
-
 end
