@@ -1,7 +1,7 @@
-require 'sinatra'
+require 'sinatra/base'
 require_relative 'lib/proxy.rb'
 
-class App < Sinatra::Base
+class ApplicationController < Sinatra::Base
   get "/*" do
     Proxy.proxy_request request
   end

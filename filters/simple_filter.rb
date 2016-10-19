@@ -1,7 +1,8 @@
-require 'sinatra'
+require 'sinatra/base'
 
 class SimpleFilter < Sinatra::Base
-  before "/*" do
+
+  before do
     content_type_filter
   end
 
